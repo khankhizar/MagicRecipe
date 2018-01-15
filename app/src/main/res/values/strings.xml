@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Magic Recipe</string>
+    <string name="enter_hint">Enter an ingredient</string>
+    <string name="intro_text">Find recipes using what you have in your kitchen</string>
+</resources>
