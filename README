@@ -14,8 +14,8 @@ Android SDK
 
 To Run
 In a terminal window, navigate to ~/AndroidStudioProjects
-Run git clone https://github.com/mbrecunier/RecipeFinder.git
-Navigate to ~/AndroidStudioProjects/RecipeFinder
+Run git clone https://github.com/khankhizar/MagicRecipe.git
+Navigate to ~/AndroidStudioProjects/MagicRecipe
 Run on either an emulator or an Android OS Device connected to a computer
 To set up an emulator
 Select Run > Run 'app'
@@ -26,4 +26,4 @@ Select configuration settings for emulator
 Click 'Finish' and allow Emulator to run
 
 Technologies Used
-Java, Android Studio, testing with Robolectric and Espresso, Firebase, Edamam API
+Java, Android Studio, testing with Robolectric and Espresso, Firebase, recipepuppy API
