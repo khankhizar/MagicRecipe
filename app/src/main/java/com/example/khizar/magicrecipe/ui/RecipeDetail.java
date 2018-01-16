@@ -32,7 +32,7 @@ public class RecipeDetail extends AppCompatActivity  {
     TextView ingredient;
     private Context mContext;
     private Recipe mRecipe;
-    String url;
+    String url,href,ingredients,title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +40,26 @@ public class RecipeDetail extends AppCompatActivity  {
         setContentView(R.layout.recipe_detail);
         ButterKnife.bind(this);
         Intent i = getIntent();
-        i.getStringExtra("title");
-        i.getStringExtra("href");
-        i.getStringExtra("ingredients");
-        i.getStringExtra("image");
-        Log.d("title", i.getStringExtra("title"));
-        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
-        mNameLabel.setText(i.getStringExtra("title"));
-        mWebsiteLabel.setText(i.getStringExtra("href"));
-        ingredient.setText(i.getStringExtra("ingredients"));
+        //i.getStringExtra("title");
+        //i.getStringExtra("href");
+        //i.getStringExtra("ingredients");
+        //i.getStringExtra("image");
+        title = i.getStringExtra("title");
+        href = i.getStringExtra("href");
         url = i.getStringExtra("ingredients");
+        ingredients=url.replaceAll(",", "\n");
+       // int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
+        mNameLabel.setText(i.getStringExtra("title"));
+        mWebsiteLabel.setText(href);
+        mWebsiteLabel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(href));
+                startActivity(webIntent);
+            }
+        });
+        ingredient.setText(ingredients);
+
         Picasso.with(mContext).load(i.getStringExtra("image")).into(mImageLabel);
     }
 

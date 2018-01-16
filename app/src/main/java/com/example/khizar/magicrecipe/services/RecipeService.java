@@ -1,6 +1,8 @@
 package com.example.khizar.magicrecipe.services;
 
 
+import android.util.Log;
+
 import com.example.khizar.magicrecipe.Constants;
 import com.example.khizar.magicrecipe.models.Recipe;
 import com.example.khizar.magicrecipe.models.Result;
@@ -15,21 +17,22 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface RecipeService {
 
     String url = Constants.BASE_URL;
 
 
-    @FormUrlEncoded
-    @POST("api")
-
-    Call<Recipe> getRecipe(@Field("i") String ingredients);
+    @GET("api/?")
+    Call<Recipe> getRecipe(@Query("i") String ingredients, @Query("q") String query, @Query("p") int page);
 
 
 
-    Gson gson = new GsonBuilder()
+
+   /* Gson gson = new GsonBuilder()
             .setLenient()
             .create();
 
@@ -43,7 +46,7 @@ public interface RecipeService {
 //            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
 //            .callbackExecutor(Executors.newFixedThreadPool(1))
             .build();
-
+*/
 
 
 }

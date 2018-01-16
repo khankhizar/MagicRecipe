@@ -25,9 +25,9 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.recipeNameTextView)
     TextView mRecipeNameTextView;
     private Context mContext;
-    private Recipe mrecipes;
+    private List<Result> mrecipes;
 
-    public RecipeViewHolder(View itemView, final Recipe recipes) {
+    public RecipeViewHolder(View itemView, List<Result> recipes) {
         super(itemView);
         ButterKnife.bind(this, itemView);
         mContext = itemView.getContext();
@@ -36,13 +36,16 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 int itemPosition = getLayoutPosition();
-                Log.d("parrcel", recipes+"");
                 Intent intent = new Intent(mContext, RecipeDetail.class);
                 intent.putExtra("position", itemPosition + "");
-                intent.putExtra("title",mrecipes.getResults().get(getAdapterPosition()).getTitle());
+                intent.putExtra("title",mrecipes.get(getAdapterPosition()).getTitle());
+                intent.putExtra("href",mrecipes.get(getAdapterPosition()).getHref());
+                intent.putExtra("ingredients",mrecipes.get(getAdapterPosition()).getIngredients());
+                intent.putExtra("image",mrecipes.get(getAdapterPosition()).getThumbnail());
+                /*intent.putExtra("title",mrecipes.getResults().get(getAdapterPosition()).getTitle());
                 intent.putExtra("href",mrecipes.getResults().get(getAdapterPosition()).getHref());
                 intent.putExtra("ingredients",mrecipes.getResults().get(getAdapterPosition()).getIngredients());
-                intent.putExtra("image",mrecipes.getResults().get(getAdapterPosition()).getThumbnail());
+                intent.putExtra("image",mrecipes.getResults().get(getAdapterPosition()).getThumbnail());*/
                 mContext.startActivity(intent);
             }
         });

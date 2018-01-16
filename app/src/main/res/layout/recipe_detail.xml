@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.RecipeDetailFragment">
+    tools:context=".ui.RecipeDetail">
 
     <LinearLayout
         android:orientation="vertical"
@@ -70,10 +70,21 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ingredients"
-                    android:id="@+id/instructionsTextView"
+                    android:text="Ingredients :"
                     android:drawableLeft="@drawable/ic_add_shopping_cart_white_18dp"
                     android:drawablePadding="4dp"
+                    android:textColor="@color/colorTextIcons"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/instructionsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ingredients"
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold"

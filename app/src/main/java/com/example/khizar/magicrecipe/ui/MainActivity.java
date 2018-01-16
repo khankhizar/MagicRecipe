@@ -33,9 +33,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.findRecipesButton:
-                Log.i(DISPLAY_SERVICE, "Button clicked : " + v.getId());
-                Log.d("ing",mIngredient1EditText.getText().toString());
-                Log.d("ing2", mIngredient1EditText.getText().toString());
                 String ingredient1 = mIngredient1EditText.getText().toString();
                 String ingredient2 = mIngredient2EditText.getText().toString();
                 Intent recipesIntent = new Intent(MainActivity.this, RecipeListActivity.class);
