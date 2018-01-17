@@ -35,11 +35,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.findRecipesButton:
                 String ingredient1 = mIngredient1EditText.getText().toString();
                 String ingredient2 = mIngredient2EditText.getText().toString();
-                Intent recipesIntent = new Intent(MainActivity.this, RecipeListActivity.class);
-                recipesIntent.putExtra("ingredient1", ingredient1);
-                recipesIntent.putExtra("ingredient2", ingredient2);
-                startActivity(recipesIntent);
-                Log.d("ingrediients",recipesIntent+"");
+                boolean login = true;
+                if (ingredient1.isEmpty()) {
+                    mIngredient1EditText.setError("Please enter a item name");
+                    login = false;
+                }
+
+                if (login) {
+                    Intent recipesIntent = new Intent(MainActivity.this, RecipeListActivity.class);
+                    recipesIntent.putExtra("ingredient1", ingredient1);
+                    recipesIntent.putExtra("ingredient2", ingredient2);
+                    startActivity(recipesIntent);
+                }
+
+                //Log.d("ingrediients",recipesIntent+"");
                 break;
             default:
                 break;
