@@ -2,8 +2,7 @@ Magic Recipe
 Android App To Find Recipes with Ingredients ,
 By Khizar Heyat Khan
 Description
-This Android application allows users to enter ingredients they have in their kitchen to get customized recipe results using the recipepuppy
-API. Users can create an account to save their favorite recipes for later reference.
+This Android application allows users to enter ingredients they have in their kitchen to get customized recipe results using the recipepuppy API.
 
 Setup/Installation Requirements
 You will need the following programs installed on your computer.
@@ -26,4 +25,4 @@ Select configuration settings for emulator
 Click 'Finish' and allow Emulator to run
 
 Technologies Used
-Java, Android Studio, testing with Robolectric and Espresso, Firebase, recipepuppy API
+Java, Android Studio, testing with Robolectric and Espresso,  recipepuppy API
